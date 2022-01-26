@@ -1,0 +1,11 @@
+* {
+    background-color: #94D698
+}
+
+.greetContainer {
+  background-color: rgb(200, 236, 220);
+  color: white;
+  border: 2px solid black;
+  margin: 400px;
+  text-align: center;
+}
