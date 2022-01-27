@@ -1,11 +1,29 @@
 * {
-    background-color: #94D698
+    background-color: #c3dac4
 }
 
 .greetContainer {
-  background-color: rgb(200, 236, 220);
+  background-color: rgb(209, 230, 220);
   color: white;
   border: 2px solid black;
   margin: 400px;
   text-align: center;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.Time{
+  border: 1px solid black;
+  position: absolute;
 }

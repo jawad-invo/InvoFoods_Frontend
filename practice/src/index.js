@@ -5,10 +5,12 @@ import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter } from "react-router-dom";
 import App from './Components/App';
+import Time from './Components/Time';
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    {/* <App /> */}
+    <Time />
   </BrowserRouter>,
   document.getElementById('root')
 );
