@@ -6,11 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 import App from './Components/App';
 import Time from './Components/Time';
+import Form from './Components/Form';
 
 ReactDOM.render(
   <BrowserRouter>
     {/* <App /> */}
-    <Time />
+    {/* <Time /> */}
+    <Form />
   </BrowserRouter>,
   document.getElementById('root')
 );
