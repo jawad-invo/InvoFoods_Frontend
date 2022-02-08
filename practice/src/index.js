@@ -1,19 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../src/style.css';
 import reportWebVitals from './reportWebVitals';
-
-import { BrowserRouter } from "react-router-dom";
-import App from './Components/App';
-import Time from './Components/Time';
-import Form from './Components/Form';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
 
 ReactDOM.render(
-  <BrowserRouter>
-    {/* <App /> */}
-    {/* <Time /> */}
-    <Form />
-  </BrowserRouter>,
+  <>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </>,
   document.getElementById('root')
 );
 
