@@ -1,22 +1,63 @@
 import React from "react";
 import Table from "../components/Table/table";
 import "../App.css";
+import Navbar from "../components/Navbar";
+
+import Axios from "axios";
+import { useEffect, useState } from "react";
 
 const Meals = () => {
-  function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
-  }
-  const rows = [
-    createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-    createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-    createData("Eclair", 262, 16.0, 24, 6.0),
-    createData("Cupcake", 305, 3.7, 67, 4.3),
-    createData("Gingerbread", 356, 16.0, 49, 3.9),
-  ];
+  const [meals, setMeals] = useState([]);
+  const user_id = localStorage.getItem("user_id");
+
+  const [reload, setReload] = useState(false);
+  useEffect(() => {
+    Axios.post("http://127.0.0.1:8080/api/meal/get", {
+      user_id: user_id,
+    })
+      .then((response) => {
+        setMeals(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [reload]);
+
+  const rows = [];
+  var i = 0;
+  meals.map((meal) => {
+    const date = meal.date.substr(0, 10);
+    const data = {
+      id: meal.id,
+      name: "Meal " + ++i,
+      date: date,
+      status: meal.status,
+    };
+    rows.push(data);
+  });
+
+  const updateMeal = (row) => {
+    console.log(row.id);
+    Axios.post("http://127.0.0.1:8080/api/meal/update", {
+      id: row.id,
+      status: "Cancelled",
+    })
+      .then((response) => {
+        console.log(response.data);
+        setReload(!reload);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
-    <div className="mealsContainer">
-      <Table rows={rows}></Table>
-    </div>
+    <>
+      <Navbar />
+      <div className="mealsContainer">
+        <Table rows={rows} updateMeal={updateMeal}></Table>
+      </div>
+    </>
   );
 };
 

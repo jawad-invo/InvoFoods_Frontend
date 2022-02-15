@@ -1,15 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");
 * {
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.mealsContainer{
+.mealsContainer {
   padding-top: 40px;
 }
 
-.menusContainer{
+.menusContainer {
   padding-top: 30px;
+}
+
+.invoiceContainer {
+  padding-top: 30px;
+}
+
+.buttonContainers {
+  padding-left: 500px;
+  padding-top: 20px;
+}
+
+.logoContainer {
+  padding-top: 18px;
+  color: white;
+  font-size: x-large;
+}
+.cancelIcon {
+  padding-left: 8px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.adminContainer {
+}
+
+.mainContainer {
+  display: flex;
+  gap: 2rem;
+}
+
+.addNewMenu {
+  padding-left: 1000px;
+}
+.adminMenuHeader {
+  padding-top: 60px;
+}
+
+.subscribersTableContainer{
+  padding-top: 40px;
 }

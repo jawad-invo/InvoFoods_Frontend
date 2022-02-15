@@ -9,12 +9,13 @@ import {
 } from "./NavbarElements";
 
 const Navbar = () => {
+  const logout = () => {
+    localStorage.clear();
+  };
   return (
     <>
       <Nav>
-        <NavLink to="/">
-          <img src={require("../../images/logo.svg")} alt="logo" />
-        </NavLink>
+        <div className="logoContainer">InvoFoods</div>
         <Bars />
         <NavMenu>
           <NavLink to="/menus" activeStyle>
@@ -33,7 +34,9 @@ const Navbar = () => {
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to="/Logout">Logout</NavBtnLink>
+          <NavBtnLink onClick={logout} to="/">
+            Logout
+          </NavBtnLink>
         </NavBtn>
       </Nav>
     </>
